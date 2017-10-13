@@ -150,11 +150,12 @@ function concatenar(x) {
     return function (y) {
         return function (a) {
             return function (b) {
-                return x+y+a+b;
+                return `${x} ${y} ${a} ${b}`;
             }
         }
     }
 }
-let cadena1 = x => concatenar("hola");
-cadena1();
 
+let cadena = b => concatenar(b);
+
+console.log(cadena("hola")("que")("haces")("?"));
